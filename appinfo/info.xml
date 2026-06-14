@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>intros</id>
+	<name>Intro tour for Files</name>
+	<summary>Interactive onboarding tour for the Nextcloud Files app</summary>
+	<description>Provides a Shepherd.js based interactive tour to help users discover the key features of the Files app.</description>
+	<version>1.0.0</version>
+	<licence>agpl</licence>
+	<author>Nextcloud contributors</author>
+	<namespace>Intros</namespace>
+	<category>tools</category>
+	<bugs>https://github.com/nextcloud/server/issues</bugs>
+	<dependencies>
+		<nextcloud min-version="34" max-version="35" />
+	</dependencies>
+</info>
