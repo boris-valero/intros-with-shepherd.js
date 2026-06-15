@@ -25,4 +25,8 @@ export default defineConfig({
 		minify: false,
 		sourcemap: false,
 	},
+	test: {
+		environment: 'jsdom',
+		include: ['tests/**/*.test.js'],
+	},
 })

@@ -7,12 +7,16 @@
 	"scripts": {
 		"build": "rm -rf dist-tmp && vite build --mode production && cp dist-tmp/js/*.mjs js/ && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros.css && rm -rf dist-tmp",
 		"dev": "rm -rf dist-tmp && vite build --mode development && cp dist-tmp/js/*.mjs js/ && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros.css && rm -rf dist-tmp",
-		"watch": "vite --mode development build --watch"
+		"watch": "vite --mode development build --watch",
+		"test": "vitest run",
+		"test:watch": "vitest"
 	},
 	"dependencies": {
 		"shepherd.js": "^11.2.0"
 	},
 	"devDependencies": {
-		"vite": "^6.3.5"
+		"jsdom": "^29.1.1",
+		"vite": "^6.3.5",
+		"vitest": "^4.1.9"
 	}
 }
