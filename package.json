@@ -5,8 +5,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "vite --mode production build && cp dist-tmp/js/intros-files.js js/intros-files.js && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros-files.css && rm -rf dist-tmp",
-		"dev": "vite --mode development build && cp dist-tmp/js/intros-files.js js/intros-files.js && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros-files.css && rm -rf dist-tmp",
+		"build": "rm -rf dist-tmp && vite build --mode production && cp dist-tmp/js/*.mjs js/ && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros.css && rm -rf dist-tmp",
+		"dev": "rm -rf dist-tmp && vite build --mode development && cp dist-tmp/js/*.mjs js/ && cp node_modules/shepherd.js/dist/css/shepherd.css css/intros.css && rm -rf dist-tmp",
 		"watch": "vite --mode development build --watch"
 	},
 	"dependencies": {

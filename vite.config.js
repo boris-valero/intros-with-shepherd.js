@@ -1,16 +1,26 @@
 import { defineConfig } from 'vite'
-import { join } from 'node:path'
+import { resolve } from 'node:path'
 
 export default defineConfig({
 	build: {
-		outDir: join(import.meta.dirname, 'dist-tmp'),
+		outDir: 'dist-tmp',
 		emptyOutDir: true,
 		rollupOptions: {
-			input: join(import.meta.dirname, 'src/intros-main.js'),
-			output: {
-				entryFileNames: 'js/intros-files.js',
-				format: 'iife',
+			input: {
+				'intros-files': resolve('src/intros-files.js'),
+				'intros-dashboard': resolve('src/intros-dashboard.js'),
 			},
+			output: {
+				entryFileNames: 'js/[name].mjs',
+				chunkFileNames: 'js/[name].mjs',
+				format: 'es',
+				manualChunks: function (id) {
+					if (id.includes('node_modules/shepherd.js')) {
+						return 'intros-shepherd'
+					}
+				},
+			},
+			preserveEntrySignatures: 'allow-extension',
 		},
 		minify: false,
 		sourcemap: false,
