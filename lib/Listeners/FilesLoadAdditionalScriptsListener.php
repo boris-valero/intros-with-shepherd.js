@@ -16,7 +16,7 @@ class FilesLoadAdditionalScriptsListener implements IEventListener {
 			return;
 		}
 
-		Util::addStyle('intros', 'intros-files');
+		Util::addStyle('intros', 'intros');
 		Util::addScript('intros', 'intros-files');
 	}
 }
